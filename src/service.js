@@ -1,5 +1,6 @@
 import axios from 'axios';
-axios.defaults.baseURL  = process.env.REACT_APP_SERVER_API_URL
+// axios.defaults.baseURL  = 'http://localhost:5107/todoitems'
+axios.defaults.baseURL  = 'https://practicode-server.onrender.com/todoitems'
 axios.interceptors.response.use(function (response) {
   console.log(response)
   return response;
