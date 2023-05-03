@@ -20,7 +20,7 @@ export default {
   },
 
   addTask: async(newTodo)=>{
-    const result=axios.post('',{name:newTodo,isComplete:false,id:0})
+    const result=await axios.post('',{name:newTodo,isComplete:false,id:0})
     console.log('addTask')
     return result.data;
   },
@@ -28,7 +28,7 @@ export default {
   setCompleted: async(id, isComplete)=>{
     // const task = await axios.get(`${apiUrl}/todoitems/${id}`)  
     // task.iscomplete=isComplete;
-   const result= axios.put(`/${id}?isComplete=${isComplete}` )
+   const result=await axios.put(`/${id}?isComplete=${isComplete}` )
     console.log('setCompleted', {id, isComplete})
     return result.data;
   },
